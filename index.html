@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Friendship Day to My Bestie! 💖</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            --primary-pink: #ff6584;
+            --secondary-purple: #a6c1ee;
+            --accent-gold: #f6d365;
+            --text-dark: #2d3748;
+            --card-bg: rgba(255, 255, 255, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #feada6 100%);
+            min-height: 100vh;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating background bubbles */
+        .bg-shapes div {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.3);
+            animation: float 10s infinite linear;
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 1.2s ease;
+        }
+
+        .subtitle {
+            font-family: 'Sacramento', cursive;
+            font-size: 3rem;
+            color: #d63384;
+            margin-bottom: -10px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+        }
+
+        .header-tagline {
+            font-size: 1.1rem;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.25);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            font-weight: 500;
+        }
+
+        /* Hero / Letter Section */
+        .love-letter {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            border: 2px solid rgba(255,255,255,0.6);
+            animation: fadeIn 1.5s ease;
+        }
+
+        .love-letter h2 {
+            font-size: 1.8rem;
+            color: var(--primary-pink);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .love-letter p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+
+        /* Feature Cards (Quote, Vibe, Gift, Skills, Scratch) */
+        .content-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+
+        .content-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-pink);
+        }
+
+        #quote-box {
+            font-size: 1.15rem;
+            font-style: italic;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            color: #4a5568;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Action Buttons */
+        .action-btn {
+            background: linear-gradient(135deg, #ff6584 0%, #ff8da1 100%);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 101, 132, 0.3);
+            transition: transform 0.2s, background 0.2s;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .action-btn:active {
+            transform: scale(0.95);
+        }
+
+        .vibe-options {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        #quiz-result {
+            margin-top: 15px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--primary-pink);
+        }
+
+        /* Problem Solving Skills Bars */
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .skill-bar-wrapper {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 12px;
+            padding: 12px 18px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(0,0,0,0.06);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6584, #ff8da1);
+            border-radius: 10px;
+        }
+
+        /* Memory Lane Section */
+        .memories-section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .memory-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.8);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .memory-img-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .memory-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .memory-card:hover .memory-img-container img {
+            transform: scale(1.08);
+        }
+
+        .memory-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 101, 132, 0.9);
+            color: white;
+            padding: 5px 12px;
+            font-size: 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+        }
+
+        .memory-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .memory-content h3 {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .memory-content p {
+            font-size: 0.95rem;
+            color: #718096;
+            line-height: 1.5;
+        }
+
+        /* Gift Box */
+        .gift-box-icon {
+            font-size: 3.5rem;
+            cursor: pointer;
+            animation: pulse 1.5s infinite;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        #hidden-message {
+            display: none;
+            font-size: 1.05rem;
+            margin-top: 15px;
+            line-height: 1.6;
+            color: #4a5568;
+            animation: fadeIn 0.8s ease;
+        }
+
+        /* Scratch Card Styling */
+        .scratch-card-container {
+            position: relative;
+            width: 320px;
+            height: 160px;
+            margin: 20px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            user-select: none;
+        }
+
+        .scratch-secret {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ffe3e8, #fff0f3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            border: 2px dashed #ff6584;
+            border-radius: 15px;
+        }
+
+        .scratch-secret h4 {
+            color: #ff6584;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .scratch-secret p {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        #scratch-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            touch-action: none;
+            border-radius: 15px;
+        }
+
+        /* Hug Heart Section */
+        .hug-heart-btn {
+            background: none;
+            border: none;
+            font-size: 4.5rem;
+            cursor: pointer;
+            color: var(--primary-pink);
+            transition: transform 0.2s ease;
+            display: inline-block;
+            margin-top: 10px;
+            outline: none;
+        }
+
+        .hug-heart-btn:hover {
+            transform: scale(1.15);
+        }
+
+        .hug-heart-btn:active {
+            transform: scale(0.9);
+        }
+
+        /* Bottom-Up Screen Fill Heart Animation */
+        .floating-heart {
+            position: fixed;
+            bottom: -50px;
+            color: #ff6584;
+            font-size: 24px;
+            pointer-events: none;
+            z-index: 2000;
+            animation: riseUp 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        @keyframes riseUp {
+            0% {
+                bottom: -50px;
+                opacity: 0.9;
+                transform: scale(0.8) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                bottom: 105vh;
+                opacity: 0;
+                transform: scale(2.5) rotate(360deg);
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: white;
+            font-size: 1rem;
+            padding: 20px 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Floating Background Bubbles -->
+    <div class="bg-shapes">
+        <div style="left: 10%; animation-duration: 8s; width: 25px; height: 25px;"></div>
+        <div style="left: 30%; animation-duration: 12s; width: 40px; height: 40px;"></div>
+        <div style="left: 50%; animation-duration: 7s; width: 20px; height: 20px;"></div>
+        <div style="left: 70%; animation-duration: 15s; width: 50px; height: 50px;"></div>
+        <div style="left: 90%; animation-duration: 9s; width: 30px; height: 30px;"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="subtitle">Happy Friendship Day!</div>
+            <h1>To My Favorite Mahek 💖</h1>
+            <div class="header-tagline"><i class="fa-solid fa-star"></i> My built-in therapist & partner in crime <i class="fa-solid fa-star"></i></div>
+        </header>
+
+        <!-- Letter Section -->
+        <section class="love-letter">
+            <h2><i class="fa-solid fa-envelope-open-heart"></i> Dear Bestie,</h2>
+            <p>If destiny is real, I'm pretty sure we were programmed to share a single brain cell. From surviving awkward phases to making unforgettable core memories, life is infinitely better with you in it.</p>
+            <p>Thank you for laughing at my stupidest jokes, dragging me out of bed, and knowing exactly what I mean even when I speak in pure gibberish. I made this little corner of the internet just to celebrate <em>us</em> and all our crazy moments!</p>
+        </section>
+
+        <!-- Daily Quote Section -->
+        <section class="content-card">
+            <h3><i class="fas fa-quote-left"></i> Daily Dose of Friendship <i class="fas fa-quote-right"></i></h3>
+            <div id="quote-box">Tap below to generate a heartwarming quote for my best friend!</div>
+            <button class="action-btn" onclick="generateQuote()"><i class="fas fa-sparkles"></i> New Quote</button>
+        </section>
+
+        <!-- Memory Lane Section (Includes Distance Card with Image) -->
+        <section class="memories-section">
+            <h2 class="section-title">✨ Our Memory Lane ✨</h2>
+            
+            <div class="memory-grid">
+                <!-- Memory 1: 1st Hangout Spot -->
+                <div class="memory-card">
+                    <div class="memory-img-container">
+                        <img src="C:\vs code\Vehicle\Friendship Day\Screenshot 2026-08-04 210502.png" alt="1st Hangout Spot">
+                        <span class="memory-badge">The Beginning</span>
+                    </div>
+                    <div class="memory-content">
+                        <div>
+                            <h3>Our 1st Talking Spot</h3>
+                            <p>Where it all started! What was supposed to be a quick catch-up turned into hours of non-stop talking in public, losing all track of time, and realizing we were going to be inseparable.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Memory 2: Distance with Image -->
+                <div class="memory-card">
+                    <div class="memory-img-container">
+                        <img src="C:\vs code\Vehicle\Friendship Day\Screenshot 2026-08-04 211043.png" alt="Distance Map Location">
+                        <span class="memory-badge"><i class="fas fa-route"></i> ~15.4 km Apart</span>
+                    </div>
+                    <div class="memory-content">
+                        <div>
+                            <h3>Distance: ~15.1 km</h3>
+                            <p>Distance? Just a minor number! Whether we are 15 km or 5,000 km away, our bond stays uninterrupted and closer than ever.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Memory 3: Walk Session -->
+                <div class="memory-card">
+                    <div class="memory-img-container">
+                        <img src="C:\vs code\Vehicle\Friendship Day\Snapchat-1320000561.jpg" alt="Walk Session">
+                        <span class="memory-badge">Deep Talks</span>
+                    </div>
+                    <div class="memory-content">
+                        <div>
+                            <h3>1st Cafe Tour</h3>
+                            <p>Hanging out at McDonald's for hours over cold fries and McFlurries, solving all world issues, venting, and laughing until our stomachs hurt</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Memory 4: Chat SS (Screenshots) -->
+                <div class="memory-card">
+                    <div class="memory-img-container">
+                        <img src="C:\vs code\Vehicle\Friendship Day\Collage maker project - August 04, 2026 at 21.44.46.png" alt="Chat Screenshots">
+                        <span class="memory-badge">Unfiltered Chaos</span>
+                    </div>
+                    <div class="memory-content">
+                        <div>
+                            <h3>The Unhinged Chat SS</h3>
+                            <p>Our camera rolls are 90% screenshots of unhinged texts, typos we still laugh at, and paragraphs detailing absolute nonsense.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Memory 5: Photo -->
+                <div class="memory-card">
+                    <div class="memory-img-container">
+                        <img src="C:\vs code\Vehicle\Friendship Day\IMG_20260804_205541.jpg" alt="Chat Screenshots">
+                        <span class="memory-badge">Special Person</span>
+                    </div>
+                    <div class="memory-content">
+                        <div>
+                            <h3>Fav Gallery</h3>
+                            <p>I could scroll through your photos for hours and never get bored. My camera roll is basically a fan page dedicated to your best (and funniest) expressions!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Friendship Problem Solving Skills Section -->
+        <section class="content-card">
+            <h3><i class="fas fa-brain"></i> Friendship Problem-Solving Skills</h3>
+            <p style="color: #718096; font-size: 0.95rem;">Our certified expert level ratings at handling life's chaos together:</p>
+            <div class="skills-container">
+                <div class="skill-bar-wrapper">
+                    <div class="skill-info">
+                        <span>Deciding what to eat / where to go</span>
+                        <span>98%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 98%;"></div></div>
+                </div>
+                <div class="skill-bar-wrapper">
+                    <div class="skill-info">
+                        <span>Covering up each other's silly mistakes</span>
+                        <span>100%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+                </div>
+                <div class="skill-bar-wrapper">
+                    <div class="skill-info">
+                        <span>Giving each other terrible yet funny advice</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
+                </div>
+                <div class="skill-bar-wrapper">
+                    <div class="skill-info">
+                        <span>Surviving boring days with memes</span>
+                        <span>99%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 99%;"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Friendship Vibe Checker -->
+        <section class="content-card">
+            <h3><i class="fas fa-heartbeat"></i> Friendship Vibe Checker</h3>
+            <p style="color: #718096; font-size: 0.95rem;">How well do we match today? Select our current vibe:</p>
+            <div class="vibe-options">
+                <button class="action-btn" onclick="checkVibe('Silly')">🤪 Pure Chaos & Fun</button>
+                <button class="action-btn" onclick="checkVibe('Deep')">🧠 Late-night Philosophers</button>
+                <button class="action-btn" onclick="checkVibe('Foodie')">🍕 Professional Snackers</button>
+            </div>
+            <div id="quiz-result"></div>
+        </section>
+
+        <!-- Special Surprise Box -->
+        <section class="content-card">
+            <h3><i class="fas fa-gift"></i> A Special Surprise for You</h3>
+            <p style="color: #718096; font-size: 0.95rem;">Tap the gift box to open your Friendship Day note!</p>
+            <div class="gift-box-icon" onclick="openGift()">🎁</div>
+            <div id="hidden-message">
+                <p>🎉 <strong>Dear Bestie,</strong><br>From endless hours of talking to all the spontaneous moments—thank you for being my anchor and my favorite person. Cheers to us! 🥂💖</p>
+            </div>
+        </section>
+
+        <!-- Scratch Card Section (Secret Revealed on Scratching) -->
+        <section class="content-card">
+            <h3><i class="fas fa-hand-pointer"></i> Scratch to Reveal Our Secret 🤫</h3>
+            <p style="color: #718096; font-size: 0.95rem;">Drag your finger or mouse over the card below to scratch off the foil!</p>
+            
+            <div class="scratch-card-container">
+                <div class="scratch-secret">
+                    <h4>🔒 OUR TOP SECRET:</h4>
+                    <p>No matter how busy or crazy life gets, you will ALWAYS be my #1 person to call first! 🤫✨</p>
+                </div>
+                <canvas id="scratch-canvas" width="320" height="160"></canvas>
+            </div>
+        </section>
+
+        <!-- Virtual Hug Section -->
+        <section class="content-card">
+            <h3>Send a virtual hug to you my Bestie 🤗</h3>
+            <p style="color: #718096; font-size: 0.95rem;">Press the heart to send a wave of love!</p>
+            <button class="hug-heart-btn" onclick="sendVirtualHug()">
+                <i class="fa-solid fa-heart"></i>
+            </button>
+            <div id="hug-counter" style="margin-top: 15px; font-size: 1rem; color: #4a5568; font-weight: 500;">
+                Hugs sent: <span>0</span> times
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Made with endless love and inside jokes for my best friend. Happy Friendship Day! 🥂💕</p>
+        </footer>
+    </div>
+
+    <script>
+        // Quotes Logic
+        const quotes = [
+            "“Each friend represents a world in us, a world possibly not born until they arrive.” – Anaïs Nin",
+            "“There is nothing better than a friend, unless it is a friend with chocolate.” – Linda Grayson",
+            "“A real friend is one who walks in when the rest of the world walks out.” – Walter Winchell",
+            "“Friendship is born at that moment when one person says to another, ‘What! You too? I thought I was the only one.’” – C.S. Lewis",
+            "“Lots of people want to ride with you in the limo, but what you want is someone who will take the bus with you when the limo breaks down.” – Oprah Winfrey"
+        ];
+
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quoteBox = document.getElementById("quote-box");
+            quoteBox.style.opacity = '0';
+            setTimeout(() => {
+                quoteBox.innerText = quotes[randomIndex];
+                quoteBox.style.opacity = '1';
+            }, 200);
+        }
+
+        // Vibe Checker Logic
+        function checkVibe(type) {
+            const resultDiv = document.getElementById("quiz-result");
+            if(type === 'Silly') {
+                resultDiv.innerHTML = "🔥 Vibe Match: 100%! We share a single brain cell and use it dangerously well.";
+            } else if(type === 'Deep') {
+                resultDiv.innerHTML = "🌌 Vibe Match: Infinite! We can solve world peace or chat endlessly about nothing.";
+            } else if(type === 'Foodie') {
+                resultDiv.innerHTML = "🍕 Vibe Match: Legendary! No diet can survive our hangouts.";
+            }
+        }
+
+        // Surprise Box Reveal
+        function openGift() {
+            document.getElementById("hidden-message").style.display = "block";
+            triggerConfetti();
+        }
+
+        // Scratch Card Canvas Scratch Logic
+        const scratchCanvas = document.getElementById('scratch-canvas');
+        const sCtx = scratchCanvas.getContext('2d');
+        let isScratching = false;
+
+        function initScratchCard() {
+            sCtx.fillStyle = '#ff8da1';
+            sCtx.fillRect(0, 0, scratchCanvas.width, scratchCanvas.height);
+            
+            sCtx.fillStyle = '#ffffff';
+            sCtx.font = 'bold 16px Outfit, sans-serif';
+            sCtx.textAlign = 'center';
+            sCtx.fillText('✨ Scratch Here ✨', scratchCanvas.width / 2, scratchCanvas.height / 2 + 5);
+        }
+
+        function scratch(e) {
+            if (!isScratching) return;
+            const rect = scratchCanvas.getBoundingClientRect();
+            const x = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
+            const y = (e.clientY || (e.touches && e.touches[0].clientY)) - rect.top;
+
+            sCtx.globalCompositeOperation = 'destination-out';
+            sCtx.beginPath();
+            sCtx.arc(x, y, 20, 0, Math.PI * 2);
+            sCtx.fill();
+        }
+
+        scratchCanvas.addEventListener('mousedown', () => isScratching = true);
+        scratchCanvas.addEventListener('mouseup', () => isScratching = false);
+        scratchCanvas.addEventListener('mousemove', scratch);
+
+        scratchCanvas.addEventListener('touchstart', () => isScratching = true);
+        scratchCanvas.addEventListener('touchend', () => isScratching = false);
+        scratchCanvas.addEventListener('touchmove', scratch);
+
+        initScratchCard();
+
+        // Simple Confetti Animation
+        const canvas = document.getElementById("confetti-canvas");
+        const ctx = canvas.getContext("2d");
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener("resize", resizeCanvas);
+        resizeCanvas();
+
+        function triggerConfetti() {
+            particles = [];
+            for(let i = 0; i < 120; i++) {
+                particles.push({
+                    x: window.innerWidth / 2,
+                    y: window.innerHeight / 2,
+                    vx: (Math.random() - 0.5) * 12,
+                    vy: (Math.random() - 0.5) * 12 - 4,
+                    size: Math.random() * 8 + 4,
+                    color: ['#ff6584', '#a6c1ee', '#f6d365', '#ff8da1'][Math.floor(Math.random() * 4)],
+                    life: 100
+                });
+            }
+            animateConfetti();
+        }
+
+        function animateConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((p, index) => {
+                p.x += p.vx;
+                p.y += p.vy;
+                p.vy += 0.3;
+                p.life--;
+                
+                ctx.fillStyle = p.color;
+                ctx.fillRect(p.x, p.y, p.size, p.size);
+
+                if (p.life <= 0) particles.splice(index, 1);
+            });
+
+            if (particles.length > 0) requestAnimationFrame(animateConfetti);
+        }
+
+        // Virtual Hug Bottom-to-Up Screen Heart Animation
+        let hugCount = 0;
+        const hearts = ['💖', '❤️', '💕', '💗', '💓', '💝'];
+
+        function sendVirtualHug() {
+            hugCount++;
+            document.querySelector('#hug-counter span').innerText = hugCount;
+
+            // Generate full screen of rising hearts from down to up
+            for (let i = 0; i < 65; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'floating-heart';
+                    heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+                    
+                    heart.style.left = Math.random() * 95 + 'vw';
+                    const size = Math.random() * 26 + 18;
+                    heart.style.fontSize = size + 'px';
+                    
+                    const duration = Math.random() * 2 + 2;
+                    heart.style.animationDuration = duration + 's';
+
+                    document.body.appendChild(heart);
+
+                    setTimeout(() => {
+                        heart.remove();
+                    }, duration * 1000);
+                }, i * 30);
+            }
+        }
+    </script>
+</body>
+</html>
